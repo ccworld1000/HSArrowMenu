@@ -17,6 +17,11 @@ pod 'HSArrowMenu'
 ```objective-c
 #import <HSMenu.h>
 ```
+or
+
+```objective-c
+#import "HSMenu.h"
+```
 
 ```objective-c
 - (void) pushMenuItem:(HSArrowMenuItem *) item

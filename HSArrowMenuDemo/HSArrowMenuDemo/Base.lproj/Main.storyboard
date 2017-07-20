@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ff5-FN-8ME">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--menu1-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48Y-0M-dUw">
+                                <rect key="frame" x="46" y="50" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="5Jd-MO-msc"/>
+                                    <constraint firstAttribute="width" constant="100" id="bsg-0J-D9Z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Click me 1"/>
+                                <connections>
+                                    <action selector="showMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4KX-a4-SCe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYx-tv-RPE">
+                                <rect key="frame" x="229" y="50" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="9dH-Ny-ebx"/>
+                                    <constraint firstAttribute="width" constant="100" id="rKD-zz-lCS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Click me 2"/>
+                                <connections>
+                                    <action selector="showMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aq5-uH-0Ip"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BK8-p0-BHj">
+                                <rect key="frame" x="46" y="313" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="4Ri-aL-uGr"/>
+                                    <constraint firstAttribute="width" constant="100" id="Vjo-qr-1DT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Click me 3"/>
+                                <connections>
+                                    <action selector="showMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rqs-gN-3Kg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0u5-We-MeA">
+                                <rect key="frame" x="46" y="548" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="OgW-Ox-5CX"/>
+                                    <constraint firstAttribute="width" constant="100" id="xhl-ae-4cc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Click me 5"/>
+                                <connections>
+                                    <action selector="showMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SxY-8m-1dn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohf-e3-2xA">
+                                <rect key="frame" x="229" y="548" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Lry-Vr-9Oh"/>
+                                    <constraint firstAttribute="width" constant="100" id="WAw-gF-yho"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Click me 6"/>
+                                <connections>
+                                    <action selector="showMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0aj-YF-18n"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bkp-gf-n7t">
+                                <rect key="frame" x="229" y="313.5" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Plv-Ab-Rou"/>
+                                    <constraint firstAttribute="width" constant="100" id="T7Y-QE-vIw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Click me 4"/>
+                                <connections>
+                                    <action selector="showMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u8B-Yd-44O"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ohf-e3-2xA" secondAttribute="bottom" constant="30" id="4Jr-3N-Ffo"/>
+                            <constraint firstItem="BK8-p0-BHj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8wK-Y1-sMt"/>
+                            <constraint firstItem="Bkp-gf-n7t" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ZZg-y2-U2X"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Bkp-gf-n7t" secondAttribute="trailing" constant="30" id="ZbF-92-nup"/>
+                            <constraint firstItem="48Y-0M-dUw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="auZ-WZ-hmw"/>
+                            <constraint firstItem="48Y-0M-dUw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="czu-fl-lga"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cYx-tv-RPE" secondAttribute="trailing" constant="30" id="glj-Ym-qP7"/>
+                            <constraint firstItem="cYx-tv-RPE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="mjo-tj-DVT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ohf-e3-2xA" secondAttribute="trailing" constant="30" id="nIU-LL-knq"/>
+                            <constraint firstItem="BK8-p0-BHj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="qmV-tn-bPB"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0u5-We-MeA" secondAttribute="bottom" constant="30" id="sdX-tm-JFx"/>
+                            <constraint firstItem="0u5-We-MeA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="suT-eC-Yak"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="menu1" id="lsM-GO-v84"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1866" y="1742"/>
+        </scene>
+        <!--menu2-->
+        <scene sceneID="U2C-8x-knd">
+            <objects>
+                <viewController id="59b-tq-mRO" customClass="Menu2" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="i3I-yB-lO2"/>
+                        <viewControllerLayoutGuide type="bottom" id="g5A-we-w3a"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0qE-3z-YAL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D0b-RX-V5M">
+                                <rect key="frame" x="46" y="50" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="GsO-xl-IUG"/>
+                                    <constraint firstAttribute="height" constant="40" id="pbr-eh-7xV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Click me 1"/>
+                                <connections>
+                                    <action selector="showMenu:" destination="59b-tq-mRO" eventType="touchUpInside" id="1BK-wv-YMS"/>
+                                    <action selector="showMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PLi-x3-FFu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVG-lF-CUx">
+                                <rect key="frame" x="229" y="50" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Lof-7d-kW5"/>
+                                    <constraint firstAttribute="height" constant="40" id="NFC-yQ-eWS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Click me 2"/>
+                                <connections>
+                                    <action selector="showMenu:" destination="59b-tq-mRO" eventType="touchUpInside" id="FfI-e9-j4m"/>
+                                    <action selector="showMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NDN-y9-FQq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7M-6D-Khi">
+                                <rect key="frame" x="46" y="313.5" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="FbT-FZ-vYv"/>
+                                    <constraint firstAttribute="width" constant="100" id="aiw-Tp-Pyd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Click me 3"/>
+                                <connections>
+                                    <action selector="showMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZR8-8m-l0t"/>
+                                    <action selector="showMenu:" destination="59b-tq-mRO" eventType="touchUpInside" id="uoS-42-tR4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0T3-nB-8SZ">
+                                <rect key="frame" x="46" y="548" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ORo-73-53J"/>
+                                    <constraint firstAttribute="width" constant="100" id="zLy-2F-Ezi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Click me 5"/>
+                                <connections>
+                                    <action selector="showMenu:" destination="59b-tq-mRO" eventType="touchUpInside" id="7Zb-9a-xJ8"/>
+                                    <action selector="showMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nbz-LA-sCl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N97-aQ-Ylk">
+                                <rect key="frame" x="229" y="548" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="bg7-HU-ct0"/>
+                                    <constraint firstAttribute="height" constant="40" id="rzp-Gz-8Ik"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Click me 6"/>
+                                <connections>
+                                    <action selector="showMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7l2-g7-31f"/>
+                                    <action selector="showMenu:" destination="59b-tq-mRO" eventType="touchUpInside" id="hR1-Fy-AXn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afa-tJ-cYM">
+                                <rect key="frame" x="229" y="313.5" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="3rK-7U-C8z"/>
+                                    <constraint firstAttribute="width" constant="100" id="HXX-gN-sge"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Click me 4"/>
+                                <connections>
+                                    <action selector="showMenu:" destination="59b-tq-mRO" eventType="touchUpInside" id="gPA-dz-IPI"/>
+                                    <action selector="showMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oRi-7u-u26"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="N97-aQ-Ylk" secondAttribute="trailing" constant="30" id="41r-Yo-QCs"/>
+                            <constraint firstItem="afa-tJ-cYM" firstAttribute="centerY" secondItem="0qE-3z-YAL" secondAttribute="centerY" id="7ta-kN-yyK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="afa-tJ-cYM" secondAttribute="trailing" constant="30" id="H4y-3r-6NZ"/>
+                            <constraint firstItem="g5A-we-w3a" firstAttribute="top" secondItem="0T3-nB-8SZ" secondAttribute="bottom" constant="30" id="ONB-cM-xtd"/>
+                            <constraint firstItem="D0b-RX-V5M" firstAttribute="top" secondItem="i3I-yB-lO2" secondAttribute="bottom" constant="30" id="QYX-P2-4Dk"/>
+                            <constraint firstItem="eVG-lF-CUx" firstAttribute="top" secondItem="i3I-yB-lO2" secondAttribute="bottom" constant="30" id="Rhc-gy-HJC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eVG-lF-CUx" secondAttribute="trailing" constant="30" id="VVe-Dz-NNQ"/>
+                            <constraint firstItem="H7M-6D-Khi" firstAttribute="centerY" secondItem="0qE-3z-YAL" secondAttribute="centerY" id="bN4-1b-u7b"/>
+                            <constraint firstItem="D0b-RX-V5M" firstAttribute="leading" secondItem="0qE-3z-YAL" secondAttribute="leadingMargin" constant="30" id="g3F-7s-Ilp"/>
+                            <constraint firstItem="H7M-6D-Khi" firstAttribute="leading" secondItem="0qE-3z-YAL" secondAttribute="leadingMargin" constant="30" id="pBu-k4-oWt"/>
+                            <constraint firstItem="g5A-we-w3a" firstAttribute="top" secondItem="N97-aQ-Ylk" secondAttribute="bottom" constant="30" id="sek-hE-sbO"/>
+                            <constraint firstItem="0T3-nB-8SZ" firstAttribute="leading" secondItem="0qE-3z-YAL" secondAttribute="leadingMargin" constant="30" id="yyR-x6-xmE"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="menu2" id="VqW-sU-ktC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h5I-GJ-hUN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-815" y="1742"/>
+        </scene>
+        <!--Item3-->
+        <scene sceneID="tTl-Ed-e9B">
+            <objects>
+                <viewController id="Zj4-0E-AoY" customClass="Menu3" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JmR-IV-swV"/>
+                        <viewControllerLayoutGuide type="bottom" id="OFO-pG-Zr1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hUd-iG-opc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sev-Fs-2Wc">
+                                <rect key="frame" x="30" y="50" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="jJP-xQ-onb"/>
+                                    <constraint firstAttribute="height" constant="30" id="mtr-x1-4p5"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="showMenu:" destination="Zj4-0E-AoY" eventType="touchUpInside" id="zA0-Ft-Hhb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1mL-L6-j4w">
+                                <rect key="frame" x="229" y="50" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="R4S-hx-Qjr"/>
+                                    <constraint firstAttribute="width" constant="100" id="jfB-Gl-Rdm"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="showMenu:" destination="Zj4-0E-AoY" eventType="touchUpInside" id="Xyd-bg-dLl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sev-Fs-2Wc" firstAttribute="leading" secondItem="hUd-iG-opc" secondAttribute="leading" constant="30" id="4PU-w1-By9"/>
+                            <constraint firstItem="sev-Fs-2Wc" firstAttribute="top" secondItem="JmR-IV-swV" secondAttribute="bottom" constant="30" id="Hm9-pA-lT7"/>
+                            <constraint firstItem="1mL-L6-j4w" firstAttribute="top" secondItem="JmR-IV-swV" secondAttribute="bottom" constant="30" id="UZg-wz-ayx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1mL-L6-j4w" secondAttribute="trailing" constant="30" id="dTZ-NE-Ch2"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item3" id="R1v-Fs-uOe"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AFz-wk-gyt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="492" y="1742"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="jHH-zP-5ij">
+            <objects>
+                <tabBarController id="ff5-FN-8ME" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="GXL-jo-3Ky">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="ZPw-Qy-CGd"/>
+                        <segue destination="59b-tq-mRO" kind="relationship" relationship="viewControllers" id="Jl8-cr-QW3"/>
+                        <segue destination="Zj4-0E-AoY" kind="relationship" relationship="viewControllers" id="sNr-7K-wKE"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3EQ-le-mvX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-644" y="684"/>
+        </scene>
+    </scenes>
+</document>

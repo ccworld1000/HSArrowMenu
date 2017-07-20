@@ -29,7 +29,7 @@ typedef struct {
     BOOL seperatorLineHasInsets;
     Color textColor;
     Color menuBackgroundColor;
-    
+    CGFloat customRightOffset; // Normal ignore
 } HSArrowMenuConfig;
 
 /**
@@ -60,6 +60,20 @@ typedef NS_ENUM(NSInteger, HSArrowMenuDirectionType) {
      *  Custom
      */
     HSArrowMenuDirectionTypeCustom,
+};
+
+/**
+ *  HSArrowMenuPriority
+ */
+typedef NS_ENUM(NSInteger, HSArrowMenuPriority) {
+    /**
+     *  Normal
+     */
+    HSArrowMenuPriorityNormal,
+    /**
+     *  Hight
+     */
+    HSArrowMenuPriorityHight,
 };
 
 

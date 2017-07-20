@@ -597,13 +597,18 @@
         const CGFloat arrowY0 = Y0;
         const CGFloat arrowY1 = Y0 + self.kxMenuViewOptions.arrowSize + kEmbedFix;
         
+        HSArrowMenuPriority priority = [HSMenu arrowMenuPriority];
+        if (priority == HSArrowMenuPriorityHight) {
+            _arrowDirection = HSArrowMenuDirectionTypeCustom;
+        }
+        
         if (_arrowDirection == HSArrowMenuDirectionTypeCustom) {
-            const CGFloat leftSpace = 9;
+            const CGFloat rightSpace = self.kxMenuViewOptions.customRightOffset;
             const CGFloat arrowXWidth = 2 * self.kxMenuViewOptions.arrowSize;
             
-            [arrowPath moveToPoint:    (CGPoint){X1 - leftSpace - arrowXWidth / 2., arrowY0}];
-            [arrowPath addLineToPoint: (CGPoint){X1 - arrowXWidth / 2., self.kxMenuViewOptions.arrowSize}];
-            [arrowPath addLineToPoint: (CGPoint){X1 - leftSpace - arrowXWidth, self.kxMenuViewOptions.arrowSize}];
+            [arrowPath moveToPoint:    (CGPoint){X1 - rightSpace - arrowXWidth / 2., arrowY0}];
+            [arrowPath addLineToPoint: (CGPoint){X1 - rightSpace, self.kxMenuViewOptions.arrowSize}];
+            [arrowPath addLineToPoint: (CGPoint){X1 - rightSpace - arrowXWidth, self.kxMenuViewOptions.arrowSize}];
         } else {
             [arrowPath moveToPoint:    (CGPoint){arrowXM, arrowY0}];
             [arrowPath addLineToPoint: (CGPoint){arrowX1, arrowY1}];

@@ -28,4 +28,7 @@
 + (UIFont *) titleFont;
 + (void) setTitleFont: (UIFont *) titleFont;
 
++ (HSArrowMenuPriority) arrowMenuPriority;
++ (void) setHSArrowMenuPriority: (HSArrowMenuPriority) priority;
+
 @end

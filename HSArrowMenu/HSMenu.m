@@ -15,6 +15,7 @@
 static HSMenu *gMenu;
 static UIColor *gTintColor;
 static UIFont *gTitleFont;
+static HSArrowMenuPriority gArrowMenuPriority;
 
 @interface HSMenu () {
     HSArrowMenu *_menuView;
@@ -136,6 +137,18 @@ static UIFont *gTitleFont;
 {
     if (titleFont != gTitleFont) {
         gTitleFont = titleFont;
+    }
+}
+
++ (HSArrowMenuPriority) arrowMenuPriority {
+    return gArrowMenuPriority;
+}
+
++ (void) setHSArrowMenuPriority: (HSArrowMenuPriority) priority {
+    if (priority == HSArrowMenuPriorityHight) {
+        gArrowMenuPriority = HSArrowMenuPriorityHight;
+    } else {
+        gArrowMenuPriority = HSArrowMenuPriorityNormal;
     }
 }
 

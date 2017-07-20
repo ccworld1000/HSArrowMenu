@@ -1,21 +1,19 @@
 //
-//  Menu3.m
+//  ViewController.m
 //  HSArrowMenuDemo
 //
-//  Created by dengyouhua on 20/07/2017.
+//  Created by dengyouhua on 19/07/2017.
 //  Copyright © 2017 cc | ccworld1000@gmail.com. All rights reserved.
 //
 
-#import "Menu3.h"
+#import "ViewController.h"
 #import <HSMenu.h>
 
-@interface Menu3 () {
-    NSUInteger step;
-}
+@interface ViewController ()
 
 @end
 
-@implementation Menu3
+@implementation ViewController
 
 - (void) pushMenuItem:(HSArrowMenuItem *) item
 {
@@ -33,56 +31,34 @@
         
     }
     
-   
-    
-    CGFloat arrowSize = 0;
-    CGFloat radius = 0;
-    if (step % 2) {
-        arrowSize = 12;
-        radius = 6.5;
-    } else {
-        arrowSize = 0;
-        radius = 0;
-    }
-    
-    step++;
-    
-    HSArrowMenuConfig o = { arrowSize,
+    HSArrowMenuConfig o = { 9,
         7,
         9,
         25,
-        radius,
-        YES,
-        NO,
-        YES,
-        NO,
+        6.5,
+        true,
+        false,
+        true,
+        false,
         {0, 0, 0},
         {1,1,1}
     };
+    
     [HSMenu showMenuInView:self.view fromRect:b.frame menuItems:menuItems withOptions:o];
     
     NSLog(@"b : %@", b.titleLabel.text);
 }
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view, typically from a nib.
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

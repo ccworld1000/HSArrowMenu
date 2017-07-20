@@ -18,6 +18,10 @@
 @property (readwrite, nonatomic) SEL action;
 @property (readwrite, nonatomic, strong) UIColor *foreColor;
 @property (readwrite, nonatomic) NSTextAlignment alignment;
+
+/**
+ * This is an index for internal automatic calculation of programs
+ */
 @property (readwrite, nonatomic) NSInteger tag;
 
 

@@ -23,10 +23,10 @@ typedef struct {
     CGFloat marginYSpacing;
     CGFloat intervalSpacing;
     CGFloat menuCornerRadius;
-    Boolean maskToBackground;
-    Boolean shadowOfMenu;
-    Boolean hasSeperatorLine;
-    Boolean seperatorLineHasInsets;
+    BOOL maskToBackground;
+    BOOL shadowOfMenu;
+    BOOL hasSeperatorLine;
+    BOOL seperatorLineHasInsets;
     Color textColor;
     Color menuBackgroundColor;
     

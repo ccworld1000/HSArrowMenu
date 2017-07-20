@@ -597,7 +597,7 @@
         const CGFloat arrowY0 = Y0;
         const CGFloat arrowY1 = Y0 + self.kxMenuViewOptions.arrowSize + kEmbedFix;
         
-        if (_arrowDirection != HSArrowMenuDirectionTypeCustom) {
+        if (_arrowDirection == HSArrowMenuDirectionTypeCustom) {
             const CGFloat leftSpace = 9;
             const CGFloat arrowXWidth = 2 * self.kxMenuViewOptions.arrowSize;
             

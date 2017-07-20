@@ -11,6 +11,7 @@
 
 #import <Foundation/Foundation.h>
 #import "HSArrowMenu.h"
+#import "HSArrowMenuItem.h"
 
 @interface HSMenu : NSObject
 

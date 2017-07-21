@@ -24,17 +24,6 @@
 
 @implementation HSArrowMenu
 
-+ (HSArrowMenu *) shareArrowMenu {
-    static HSArrowMenu *hsArrowMenu;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        hsArrowMenu = [HSArrowMenu new];
-    });
-    
-    return hsArrowMenu;
-}
-
-
 - (id)init
 {
     self = [super initWithFrame:CGRectZero];
@@ -81,6 +70,35 @@
         
         self.layer.shadowColor = [[UIColor blackColor] CGColor];
     }
+    
+    HSArrowMenuPriority priority = [HSMenu arrowMenuPriority];
+    if (priority == HSArrowMenuPriorityHight) {
+        _arrowDirection = HSArrowMenuDirectionTypeCustom;
+        
+        CGPoint point = (CGPoint){
+            rectXM - widthHalf,
+            rectY1
+        };
+        
+        if (point.x < kMargin)
+            point.x = kMargin;
+        
+        if ((point.x + contentSize.width + kMargin) > outerWidth)
+            point.x = outerWidth - contentSize.width - kMargin;
+        
+        _arrowPosition = rectXM - point.x;
+        //_arrowPosition = MAX(16, MIN(_arrowPosition, contentSize.width - 16));
+        _contentView.frame = (CGRect){0, self.kxMenuViewOptions.arrowSize, contentSize};
+        
+        self.frame = (CGRect) {
+            
+            point,
+            contentSize.width,
+            contentSize.height + self.kxMenuViewOptions.arrowSize
+        };
+        return;
+    }
+    
     
     if (heightPlusArrow < (outerHeight - rectY1)) {
         
@@ -615,7 +633,7 @@
             [arrowPath addLineToPoint: (CGPoint){arrowX0, arrowY1}];
             [arrowPath addLineToPoint: (CGPoint){arrowXM, arrowY0}];
         }
-
+        
         [[UIColor colorWithRed:R0 green:G0 blue:B0 alpha:1] set];
         
         Y0 += self.kxMenuViewOptions.arrowSize;
@@ -670,6 +688,23 @@
         [[UIColor colorWithRed:R1 green:G1 blue:B1 alpha:1] set];
         
         X1 -= self.kxMenuViewOptions.arrowSize;
+    } else if (_arrowDirection == HSArrowMenuDirectionTypeCustom) {
+        const CGFloat arrowXM = _arrowPosition;
+        const CGFloat arrowX0 = arrowXM - self.kxMenuViewOptions.arrowSize;
+        const CGFloat arrowX1 = arrowXM + self.kxMenuViewOptions.arrowSize;
+        const CGFloat arrowY0 = Y0;
+        const CGFloat arrowY1 = Y0 + self.kxMenuViewOptions.arrowSize + kEmbedFix;
+        
+        const CGFloat rightSpace = self.kxMenuViewOptions.customRightOffset;
+        const CGFloat arrowXWidth = 2 * self.kxMenuViewOptions.arrowSize;
+        
+        [arrowPath moveToPoint:    (CGPoint){X1 - rightSpace - arrowXWidth / 2., arrowY0}];
+        [arrowPath addLineToPoint: (CGPoint){X1 - rightSpace, self.kxMenuViewOptions.arrowSize}];
+        [arrowPath addLineToPoint: (CGPoint){X1 - rightSpace - arrowXWidth, self.kxMenuViewOptions.arrowSize}];
+        
+        [[UIColor colorWithRed:R0 green:G0 blue:B0 alpha:1] set];
+        
+        Y0 += self.kxMenuViewOptions.arrowSize;
     }
     
     [arrowPath fill];

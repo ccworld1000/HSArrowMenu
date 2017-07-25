@@ -30,6 +30,9 @@ typedef struct {
     Color textColor;
     Color menuBackgroundColor;
     CGFloat customRightOffset; // Normal ignore
+    BOOL showSelectColor; // is show SelectColor
+    Color selectColor; // select Color
+    BOOL ignoreLast; //  Normal ignore
 } HSArrowMenuConfig;
 
 /**
@@ -88,5 +91,10 @@ typedef NS_ENUM(NSInteger, HSArrowMenuPriority) {
               fromRect:(CGRect)rect
              menuItems:(NSArray *)menuItems
            withOptions:(HSArrowMenuConfig) options;
+
+/**
+ *  cleanSelectState | There may be several different selection menus, so you can clean select state.
+ */
++ (void) cleanSelectState;
 
 @end

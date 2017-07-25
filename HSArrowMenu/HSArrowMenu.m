@@ -13,6 +13,7 @@
 #import "HSArrowMenuOverlay.h"
 #import "HSMenu.h"
 
+static NSInteger _innerSelectIndex = -1;
 
 @interface HSArrowMenu () {
     CGFloat                     _arrowPosition;
@@ -24,6 +25,10 @@
 
 @implementation HSArrowMenu
 
++ (void) cleanSelectState {
+    _innerSelectIndex = -1;
+}
+
 - (id)init
 {
     self = [super initWithFrame:CGRectZero];
@@ -33,7 +38,6 @@
         
         self.opaque = YES;
         self.alpha = 0;
-        
     }
     
     return self;
@@ -285,7 +289,9 @@
     [self dismissMenu:YES];
     
     UIButton *button = (UIButton *)sender;
-    HSArrowMenuItem *menuItem = _menuItems[button.tag];
+    NSInteger tag = button.tag;
+    _innerSelectIndex = tag;
+    HSArrowMenuItem *menuItem = _menuItems[tag];
     [menuItem performAction];
 }
 
@@ -439,7 +445,12 @@
             
             //配置：menuItem字体颜色
             //titleLabel.textColor = menuItem.foreColor ? menuItem.foreColor : [UIColor blackColor];
-            titleLabel.textColor = [UIColor colorWithRed:self.kxMenuViewOptions.textColor.R green:self.kxMenuViewOptions.textColor.G blue:self.kxMenuViewOptions.textColor.B alpha:1];
+            BOOL showSelectColor = self.kxMenuViewOptions.showSelectColor;
+            if (showSelectColor && (_innerSelectIndex >= 0) && (_innerSelectIndex == menuItem.tag)) {
+                titleLabel.textColor = [UIColor colorWithRed:self.kxMenuViewOptions.selectColor.R green:self.kxMenuViewOptions.selectColor.G blue:self.kxMenuViewOptions.selectColor.B alpha:1];
+            } else {
+                titleLabel.textColor = [UIColor colorWithRed:self.kxMenuViewOptions.textColor.R green:self.kxMenuViewOptions.textColor.G blue:self.kxMenuViewOptions.textColor.B alpha:1];
+            }
             
             titleLabel.backgroundColor = [UIColor clearColor];
             
@@ -487,7 +498,11 @@
     
     itemY += self.kxMenuViewOptions.menuCornerRadius;
     
-    contentView.frame = (CGRect){0, 0, maxItemWidth, itemY + kMarginY * 2 + 5.5 + self.kxMenuViewOptions.menuCornerRadius};
+    if (self.kxMenuViewOptions.ignoreLast) {
+        contentView.frame = (CGRect){0, 0, maxItemWidth, itemY + maxItemHeight - kMarginY * 2};
+    } else {
+        contentView.frame = (CGRect){0, 0, maxItemWidth, itemY + kMarginY * 2 + 5.5 + self.kxMenuViewOptions.menuCornerRadius};
+    }
     
     return contentView;
 }
@@ -689,12 +704,8 @@
         
         X1 -= self.kxMenuViewOptions.arrowSize;
     } else if (_arrowDirection == HSArrowMenuDirectionTypeCustom) {
-        const CGFloat arrowXM = _arrowPosition;
-        const CGFloat arrowX0 = arrowXM - self.kxMenuViewOptions.arrowSize;
-        const CGFloat arrowX1 = arrowXM + self.kxMenuViewOptions.arrowSize;
         const CGFloat arrowY0 = Y0;
-        const CGFloat arrowY1 = Y0 + self.kxMenuViewOptions.arrowSize + kEmbedFix;
-        
+
         const CGFloat rightSpace = self.kxMenuViewOptions.customRightOffset;
         const CGFloat arrowXWidth = 2 * self.kxMenuViewOptions.arrowSize;
         

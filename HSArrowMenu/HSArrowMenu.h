@@ -97,4 +97,11 @@ typedef NS_ENUM(NSInteger, HSArrowMenuPriority) {
  */
 + (void) cleanSelectState;
 
+/**
+ *  setSelectTagValue | The tag value must be within the range [index 0 .. N]
+ *
+ *  @param tag tag description
+ */
++ (void) setSelectTagValue : (NSInteger) tag;
+
 @end

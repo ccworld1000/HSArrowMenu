@@ -29,6 +29,17 @@ static NSInteger _innerSelectIndex = -1;
     _innerSelectIndex = -1;
 }
 
++ (void) setSelectTagValue : (NSInteger) tag {
+    if (tag < 0) {
+        NSLog(@"error tag");
+        return;
+    }
+    
+    if (_innerSelectIndex != tag) {
+        _innerSelectIndex = tag;
+    }
+}
+
 - (id)init
 {
     self = [super initWithFrame:CGRectZero];

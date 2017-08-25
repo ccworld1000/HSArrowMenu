@@ -680,8 +680,6 @@ static NSInteger _innerSelectIndex = -1;
         const CGFloat arrowY0 = Y1 - self.kxMenuViewOptions.arrowSize - kEmbedFix;
         const CGFloat arrowY1 = Y1;
         
-        NSLog(@"arrowXM = %lf | arrowX0 = %lf | arrowX1 = %lf | arrowY0 = %lf |  arrowY1 = %lf | self.kxMenuViewOptions.customRightOffset  = %lf", arrowXM, arrowX0, arrowX1, arrowY0, arrowY1, self.kxMenuViewOptions.customRightOffset);
-        
         HSArrowMenuPriority priority = [HSMenu arrowMenuPriority];
         if (priority == HSArrowMenuPriorityUpAndDown) {
             const CGFloat rightSpace = self.kxMenuViewOptions.customRightOffset;

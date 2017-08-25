@@ -70,6 +70,10 @@ typedef NS_ENUM(NSInteger, HSArrowMenuDirectionType) {
  */
 typedef NS_ENUM(NSInteger, HSArrowMenuPriority) {
     /**
+     *  First
+     */
+    HSArrowMenuPriorityFirst = 0,
+    /**
      *  Normal
      */
     HSArrowMenuPriorityNormal,
@@ -77,6 +81,14 @@ typedef NS_ENUM(NSInteger, HSArrowMenuPriority) {
      *  Hight
      */
     HSArrowMenuPriorityHight,
+    /**
+     *  UpAndDown
+     */
+    HSArrowMenuPriorityUpAndDown,
+    /**
+     *  Last
+     */
+    HSArrowMenuPriorityLast,
 };
 
 

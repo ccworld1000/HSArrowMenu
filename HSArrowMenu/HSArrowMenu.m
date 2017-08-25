@@ -654,10 +654,19 @@ static NSInteger _innerSelectIndex = -1;
             [arrowPath addLineToPoint: (CGPoint){X1 - rightSpace, self.kxMenuViewOptions.arrowSize}];
             [arrowPath addLineToPoint: (CGPoint){X1 - rightSpace - arrowXWidth, self.kxMenuViewOptions.arrowSize}];
         } else {
-            [arrowPath moveToPoint:    (CGPoint){arrowXM, arrowY0}];
-            [arrowPath addLineToPoint: (CGPoint){arrowX1, arrowY1}];
-            [arrowPath addLineToPoint: (CGPoint){arrowX0, arrowY1}];
-            [arrowPath addLineToPoint: (CGPoint){arrowXM, arrowY0}];
+            if (priority == HSArrowMenuPriorityUpAndDown) {
+                const CGFloat rightSpace = self.kxMenuViewOptions.customRightOffset;
+                const CGFloat arrowXWidth = 2 * self.kxMenuViewOptions.arrowSize;
+                
+                [arrowPath moveToPoint:    (CGPoint){X1 - rightSpace - arrowXWidth / 2., arrowY0}];
+                [arrowPath addLineToPoint: (CGPoint){X1 - rightSpace, self.kxMenuViewOptions.arrowSize}];
+                [arrowPath addLineToPoint: (CGPoint){X1 - rightSpace - arrowXWidth, self.kxMenuViewOptions.arrowSize}];
+            } else {
+                [arrowPath moveToPoint:    (CGPoint){arrowXM, arrowY0}];
+                [arrowPath addLineToPoint: (CGPoint){arrowX1, arrowY1}];
+                [arrowPath addLineToPoint: (CGPoint){arrowX0, arrowY1}];
+                [arrowPath addLineToPoint: (CGPoint){arrowXM, arrowY0}];
+            }
         }
         
         [[UIColor colorWithRed:R0 green:G0 blue:B0 alpha:1] set];
@@ -665,22 +674,33 @@ static NSInteger _innerSelectIndex = -1;
         Y0 += self.kxMenuViewOptions.arrowSize;
         
     } else if (_arrowDirection == HSArrowMenuDirectionTypeDown) {
-        
         const CGFloat arrowXM = _arrowPosition;
         const CGFloat arrowX0 = arrowXM - self.kxMenuViewOptions.arrowSize;
         const CGFloat arrowX1 = arrowXM + self.kxMenuViewOptions.arrowSize;
         const CGFloat arrowY0 = Y1 - self.kxMenuViewOptions.arrowSize - kEmbedFix;
         const CGFloat arrowY1 = Y1;
         
-        [arrowPath moveToPoint:    (CGPoint){arrowXM, arrowY1}];
-        [arrowPath addLineToPoint: (CGPoint){arrowX1, arrowY0}];
-        [arrowPath addLineToPoint: (CGPoint){arrowX0, arrowY0}];
-        [arrowPath addLineToPoint: (CGPoint){arrowXM, arrowY1}];
+        NSLog(@"arrowXM = %lf | arrowX0 = %lf | arrowX1 = %lf | arrowY0 = %lf |  arrowY1 = %lf | self.kxMenuViewOptions.customRightOffset  = %lf", arrowXM, arrowX0, arrowX1, arrowY0, arrowY1, self.kxMenuViewOptions.customRightOffset);
         
+        HSArrowMenuPriority priority = [HSMenu arrowMenuPriority];
+        if (priority == HSArrowMenuPriorityUpAndDown) {
+            const CGFloat rightSpace = self.kxMenuViewOptions.customRightOffset;
+            const CGFloat arrowXWidth = 2 * self.kxMenuViewOptions.arrowSize;
+            
+            [arrowPath moveToPoint:    (CGPoint){X1 - rightSpace - arrowXWidth / 2., arrowY1}];
+            
+            [arrowPath addLineToPoint: (CGPoint){X1 - rightSpace, arrowY0 + kEmbedFix}];
+            [arrowPath addLineToPoint: (CGPoint){X1 - rightSpace - arrowXWidth, arrowY0 + kEmbedFix}];
+        } else {
+            [arrowPath moveToPoint:    (CGPoint){arrowXM, arrowY1}];
+            [arrowPath addLineToPoint: (CGPoint){arrowX1, arrowY0}];
+            [arrowPath addLineToPoint: (CGPoint){arrowX0, arrowY0}];
+            [arrowPath addLineToPoint: (CGPoint){arrowXM, arrowY1}];
+        }
+
         [[UIColor colorWithRed:R1 green:G1 blue:B1 alpha:1] set];
         
         Y1 -= self.kxMenuViewOptions.arrowSize;
-        
     } else if (_arrowDirection == HSArrowMenuDirectionTypeLeft) {
         
         const CGFloat arrowYM = _arrowPosition;

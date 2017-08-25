@@ -145,11 +145,16 @@ static HSArrowMenuPriority gArrowMenuPriority;
 }
 
 + (void) setHSArrowMenuPriority: (HSArrowMenuPriority) priority {
-    if (priority == HSArrowMenuPriorityHight) {
-        gArrowMenuPriority = HSArrowMenuPriorityHight;
-    } else {
-        gArrowMenuPriority = HSArrowMenuPriorityNormal;
+    if (priority < HSArrowMenuPriorityFirst && priority > HSArrowMenuPriorityLast) {
+        NSLog(@"ill priority");
+        return;
     }
+    
+    if (gArrowMenuPriority == priority) {
+        return;
+    }
+
+    gArrowMenuPriority = priority;
 }
 
 

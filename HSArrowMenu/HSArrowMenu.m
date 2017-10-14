@@ -417,8 +417,6 @@ static NSInteger _innerSelectIndex = -1;
             if (customInnerSelectBackground) {
                 CGRect newBounds = itemView.bounds;
                 if ((newBounds.size.height > 2 * customInnerSpace) && (newBounds.size.width > 2 * customInnerSpace)) {
-                    NSLog(@"cc  button.frame = newBounds; : %@", NSStringFromCGRect(newBounds));
-                    
                     newBounds.origin.x += customInnerSpace;
                     newBounds.origin.y += customInnerSpace;
                     

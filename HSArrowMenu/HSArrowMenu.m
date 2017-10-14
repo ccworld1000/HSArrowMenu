@@ -372,6 +372,7 @@ static NSInteger _innerSelectIndex = -1;
     const CGFloat titleWidth = maxItemWidth - titleX - kMarginX *2;
     
     UIImage *selectedImage = [HSArrowMenu selectedImage:(CGSize){maxItemWidth, maxItemHeight + 2}];
+    
     //配置：分隔线是与内容等宽还是与菜单等宽
     int insets = 0;
     
@@ -393,6 +394,9 @@ static NSInteger _innerSelectIndex = -1;
     NSUInteger itemNum = 0;
     NSUInteger step = 0;
     
+    BOOL customInnerSelectBackground = self.kxMenuViewOptions.customInnerSelectBackground;
+    CGFloat customInnerSpace = fabs(self.kxMenuViewOptions.customInnerSpace);
+    
     for (HSArrowMenuItem *menuItem in _menuItems) {
         menuItem.tag = step;
         
@@ -409,7 +413,24 @@ static NSInteger _innerSelectIndex = -1;
             
             UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
             button.tag = itemNum;
-            button.frame = itemView.bounds;
+            
+            if (customInnerSelectBackground) {
+                CGRect newBounds = itemView.bounds;
+                if ((newBounds.size.height > 2 * customInnerSpace) && (newBounds.size.width > 2 * customInnerSpace)) {
+                    NSLog(@"cc  button.frame = newBounds; : %@", NSStringFromCGRect(newBounds));
+                    
+                    newBounds.origin.x += customInnerSpace;
+                    newBounds.origin.y += customInnerSpace;
+                    
+                    newBounds.size.width -= (2 * customInnerSpace);
+                    newBounds.size.height -= (2 * customInnerSpace);
+                }
+                
+                button.frame = newBounds;
+            } else {
+                button.frame = itemView.bounds;
+            }
+            
             button.enabled = menuItem.enabled;
             
             button.backgroundColor = [UIColor clearColor];
@@ -421,8 +442,19 @@ static NSInteger _innerSelectIndex = -1;
                        action:@selector(performAction:)
              forControlEvents:UIControlEventTouchUpInside];
             
-            [button setBackgroundImage:selectedImage forState:UIControlStateHighlighted];
-            
+            if (customInnerSelectBackground) {
+                CGFloat r,g,b;
+                r = self.kxMenuViewOptions.InnerSelectBackgroundColor.R;
+                g = self.kxMenuViewOptions.InnerSelectBackgroundColor.G;
+                b = self.kxMenuViewOptions.InnerSelectBackgroundColor.B;
+                
+                [button setBackgroundImage:[HSArrowMenu genImageWithColor:[UIColor colorWithRed:r green:g blue:b alpha:1]]
+                                  forState:UIControlStateHighlighted];
+                
+            } else {
+                [button setBackgroundImage:selectedImage forState:UIControlStateHighlighted];
+            }
+
             [itemView addSubview:button];
         }
         
@@ -596,6 +628,24 @@ static NSInteger _innerSelectIndex = -1;
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return image;
+}
+
++ (UIImage *)genImageWithColor:(UIColor *)color {
+    
+    CGRect rect=CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    
+    CGContextFillRect(context, rect);
+
+    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return theImage;
 }
 
 - (void) drawRect:(CGRect)rect

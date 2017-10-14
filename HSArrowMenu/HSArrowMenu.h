@@ -33,6 +33,9 @@ typedef struct {
     BOOL showSelectColor; // is show SelectColor
     Color selectColor; // select Color
     BOOL ignoreLast; //  Normal ignore
+    BOOL customInnerSelectBackground; // custom Inner Select Background
+    CGFloat customInnerSpace; //customInnerSpace should more less
+    Color InnerSelectBackgroundColor; //InnerSelectBackgroundColor
 } HSArrowMenuConfig;
 
 /**

@@ -36,6 +36,7 @@ typedef struct {
     BOOL customInnerSelectBackground; // custom Inner Select Background
     CGFloat customInnerSpace; //customInnerSpace should more less
     Color InnerSelectBackgroundColor; //InnerSelectBackgroundColor
+    BOOL isSelectShowBlod; // isSelectShowBlod
 } HSArrowMenuConfig;
 
 /**

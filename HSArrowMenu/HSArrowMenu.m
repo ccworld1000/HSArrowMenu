@@ -489,6 +489,10 @@ static NSInteger _innerSelectIndex = -1;
             BOOL showSelectColor = self.kxMenuViewOptions.showSelectColor;
             if (showSelectColor && (_innerSelectIndex >= 0) && (_innerSelectIndex == menuItem.tag)) {
                 titleLabel.textColor = [UIColor colorWithRed:self.kxMenuViewOptions.selectColor.R green:self.kxMenuViewOptions.selectColor.G blue:self.kxMenuViewOptions.selectColor.B alpha:1];
+                
+                if (self.kxMenuViewOptions.isSelectShowBlod) {
+                    titleLabel.font = [UIFont boldSystemFontOfSize:titleFont.pointSize];
+                }
             } else {
                 titleLabel.textColor = [UIColor colorWithRed:self.kxMenuViewOptions.textColor.R green:self.kxMenuViewOptions.textColor.G blue:self.kxMenuViewOptions.textColor.B alpha:1];
             }

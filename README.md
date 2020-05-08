@@ -2,11 +2,10 @@
 HSArrowMenu : A popup menu.
 
 some adjust for new [https://github.com/ccworld1000/HSArrowMenu](https://github.com/ccworld1000/HSArrowMenu)
-## Bug 
 
-Email ： <a href="mailto:ccworld1000@gmail.com">ccworld1000@gmail.com</a>
 
-## Podfile
+
+## Pod
 
 ```ruby
 pod 'HSArrowMenu'
@@ -67,12 +66,12 @@ reference 2 [https://github.com/zpz1237/NirKxMenu](https://github.com/zpz1237/Ni
 
 # ScreenShots
 ## Menu1
-![Menu1 Screenshot](https://github.com/ccworld1000/HSArrowMenu/blob/master/Documentation/menu1.gif?raw=true)
+![Menu1 Screenshot](https://raw.github.com/ccworld1000/HSArrowMenu/master/Documentation/menu1.gif)
 
 ## Menu2
-![Menu2 Screenshot](https://github.com/ccworld1000/HSArrowMenu/blob/master/Documentation/menu2.gif?raw=true)
+![Menu2 Screenshot](https://raw.github.com/ccworld1000/HSArrowMenu/master/Documentation/menu2.gif)
 
 ## Menu3
-![Menu3 Screenshot](https://github.com/ccworld1000/HSArrowMenu/blob/master/Documentation/menu3.gif?raw=true)
+![Menu3 Screenshot](https://raw.github.com/ccworld1000/HSArrowMenu/master/Documentation/menu3.gif)
 
 
